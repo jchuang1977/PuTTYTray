@@ -33,6 +33,8 @@ enum {
 
 static const char hex[16] = "0123456789ABCDEF";
 
+static enum storage_t storagetype = STORAGE_REG;
+
 static char *mungestr(const char *in)
 {
     char *out, *ret;
@@ -456,10 +458,15 @@ void del_settings(const char *sessionname)
     sfree(filename);
 }
 
+enum storage_t get_storagetype(void)
+{
+	return storagetype;
+}
+
 void set_storagetype(int storagetype_IGNORED) {
 }
 
-void *enum_settings_start(int storagetype_IGNORED)
+void *enum_settings_start(void)
 {
     DIR *dp;
     char *filename;

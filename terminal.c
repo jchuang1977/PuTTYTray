@@ -6426,7 +6426,7 @@ void term_paste(Terminal *term)
 	while (n + term->paste_pos < term->paste_len) {
             if (term->paste_buffer[term->paste_pos + n++] == '\015') {
                 if (term->pastedelay > 0) {
-                    Sleep(term->pastedelay);
+                    sleep(term->pastedelay);
 		}
                 break;
 	    }

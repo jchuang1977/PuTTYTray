@@ -17,6 +17,8 @@ static unsigned int link_regions_current_pos;
 int urlhack_is_ctrl_pressed();
 void rtfm(const char *error);
 
+Terminal *term;
+
 int urlhack_is_in_link_region(int x, int y)
 {
     unsigned int i = 0;

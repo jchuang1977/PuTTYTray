@@ -23,8 +23,8 @@ enum storage_t {
     STORAGE_FILE
 };
 
-enum storage_t get_storagetype(void);
-void set_storagetype(enum storage_t new_storagetype);
+enum storage_t get_storagetype();
+void set_storagetype(int storagetype_IGNORED) ;
 
 /*
  * Write a saved session. The caller is expected to call
@@ -78,7 +78,7 @@ void del_settings(const char *sessionname);
 /*
  * Enumerate all saved sessions.
  */
-void *enum_settings_start(void);
+void *enum_settings_start();
 char *enum_settings_next(void *handle, char *buffer, int buflen);
 void enum_settings_finish(void *handle);
 
